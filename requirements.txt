@@ -1,0 +1,19 @@
+# coilmem core (coilmem/store.py) + tests use stdlib only.
+
+# HTTP service + openai/gemini embedders
+fastapi>=0.110
+uvicorn>=0.29
+httpx>=0.27
+
+# Local embeddings (EMBED_PROVIDER=local) — pulls torch. Skip if using openai/gemini.
+sentence-transformers>=3.0
+
+# Multi-agent team (agents/) — LangGraph + providers + token counting
+langgraph>=0.2
+langchain>=0.3
+langchain-openai>=0.2
+langchain-anthropic>=0.2
+langchain-google-genai>=2.0
+tiktoken>=0.7
+
+# Dev: pytest>=8
