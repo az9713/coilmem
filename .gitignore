@@ -5,3 +5,7 @@ __pycache__/
 *.db
 .venv/
 models/
+
+# internal docs — kept locally, never committed
+DEVELOPMENT_JOURNEY.md
+council-coilmem-decision.md
