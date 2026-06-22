@@ -5,7 +5,7 @@ ROLES = ["researcher", "critic", "writer"]
 
 ROLE_MODELS = {
     "researcher": "openai:gpt-4o-mini",
-    "critic": "anthropic:claude-3-5-haiku-latest",
+    "critic": "anthropic:claude-haiku-4-5-20251001",
     "writer": "openai:gpt-4o",
 }
 

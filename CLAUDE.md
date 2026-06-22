@@ -6,9 +6,7 @@ Independent codebase — no council, no shared package.
 
 ## Orientation (read these before non-trivial changes)
 - `DEVELOPMENT.md` — architecture, decisions + rationale, extension guide, known limits.
-- `DEVELOPMENT_JOURNEY.md` — how this came to be (the full cross-project history).
 - `specs/mvp_spec.md`, `specs/build_plan.md` — the product wedge and original build plan.
-- `council-coilmem-decision.md` — why coilmem is its own repo (the council was the wrong vehicle).
 - `README.md` — setup + run.
 
 ## Invariants — do not break without explicit intent
