@@ -20,4 +20,25 @@ def load_env(path: str = ".env") -> None:
         if not line or line.startswith("#") or "=" not in line:
             continue
         key, _, val = line.partition("=")
-        os.environ.setdefault(key.strip(), val.strip().strip('"').strip("'"))
+        val = val.strip()
+        if val[:1] not in ("'", '"'):  # strip inline "# comment" from unquoted values only
+            val = val.split(" #", 1)[0].split("\t#", 1)[0].strip()
+        os.environ.setdefault(key.strip(), val.strip('"').strip("'"))
+
+
+def _selfcheck():
+    """Run: python -m coilmem.config — verifies inline-comment stripping."""
+    import tempfile
+
+    f = Path(tempfile.mkdtemp()) / ".env"
+    f.write_text('CM_A=openai   # local | openai | gemini\nCM_B="va#lue"\nCM_C=pa#ss\n',
+                 encoding="utf-8")
+    load_env(str(f))
+    assert os.environ["CM_A"] == "openai", repr(os.environ["CM_A"])        # inline comment stripped
+    assert os.environ["CM_B"] == "va#lue", repr(os.environ["CM_B"])        # quoted '#' preserved
+    assert os.environ["CM_C"] == "pa#ss", repr(os.environ["CM_C"])         # unspaced '#' preserved
+    print("OK: load_env strips inline comments and preserves '#' inside values")
+
+
+if __name__ == "__main__":
+    _selfcheck()
