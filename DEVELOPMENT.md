@@ -1,8 +1,7 @@
 # coilmem — Development Journey & Context
 
-Context for future work on this repo. Read alongside `README.md` (how to run),
-`specs/mvp_spec.md` (the product wedge), and `council-coilmem-decision.md` (why this is its
-own codebase). This file captures the "why and how we got here."
+Context for future work on this repo. Read alongside `README.md` (how to run) and
+`specs/mvp_spec.md` (the product wedge). This file captures the "why and how we got here."
 
 ---
 
@@ -17,8 +16,7 @@ ones, and **never** another agent's private memories. That scope rule is the pro
 It was briefly entangled with an "LLM Council" experiment. We concluded the council is the
 wrong vehicle to prove coilmem (a council is low-frequency and uses only the non-novel
 `shared` half — i.e. plain RAG). So the projects were split; this repo is coilmem standalone,
-**plus a multi-agent team that actually exercises the wedge.** Backstory:
-`council-coilmem-decision.md`.
+**plus a multi-agent team that actually exercises the wedge.**
 
 ## 2. What this is — two surfaces
 
@@ -117,5 +115,4 @@ researcher ─→ critic ─→ writer        (one turn = one topic; repeated ov
 ## 9. Pointers
 
 - `specs/mvp_spec.md`, `specs/build_plan.md` — the product wedge and original build plan.
-- `council-coilmem-decision.md` — why council and coilmem are separate.
 - Tests encode the intended behavior — change them deliberately, they are the spec.

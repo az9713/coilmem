@@ -5,8 +5,7 @@ is built for *teams of agents*: a workspace-level **`shared`** scope any agent c
 per-agent **`private`** scope. An agent's search returns its own private memories plus the
 workspace's shared ones — and never another agent's private memories.
 
-Independent codebase (no council, no shared package). Design context:
-[`council-coilmem-decision.md`](council-coilmem-decision.md). Product spec:
+Independent codebase (no council, no shared package). Product spec:
 [`specs/mvp_spec.md`](specs/mvp_spec.md).
 
 ## Two surfaces
