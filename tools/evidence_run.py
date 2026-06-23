@@ -73,7 +73,7 @@ memories = [dict(r) for r in rows]
 L = [
     "# Shared-memory evidence — researcher -> critic -> writer (LIVE)\n",
     f"Workspace: `{WS}` | mode: memory | k=5 | embeddings: openai",
-    f"Models: researcher=gpt-4o-mini, critic=claude-haiku-4-5, writer=gpt-4o",
+    "Models: researcher=gpt-4o-mini, critic=claude-haiku-4-5, writer=gpt-4o",
     f"Cost: {cost.total_calls()} LLM calls, {cost.total_tokens()} tokens\n",
     "Each agent calls store.search BEFORE acting. `CROSS-SHARED` = a memory authored by a",
     "*different* agent, in `shared` scope — i.e. context this agent did not produce itself.",
