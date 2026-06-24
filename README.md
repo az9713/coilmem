@@ -61,6 +61,14 @@ Roles are an ordered list in `agents/config.py` — add agents by extending `ROL
 Library: `coilmem/{store,embed,app,config,demo}.py`. Team: `agents/{team,config,demo,eval,llm}.py`.
 Tests: `tests/{test_store,test_api,test_agents}.py`.
 
+## Security scan (partial)
+
+[`coilmem_security_scan_progress_report.md`](coilmem_security_scan_progress_report.md) is a
+**partial** output from an in-progress repository scan by the Codex Security plugin (local
+paths redacted). It is a mid-run progress report, not a finalized security report — its
+candidate findings (e.g. the shared-API-key / `agent_id` authorization boundary) still need
+formal validation.
+
 ## Notes / caveats
 
 - One `EMBED_PROVIDER` per DB (dims differ across providers; the store rejects mixed dims).
