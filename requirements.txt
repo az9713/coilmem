@@ -13,7 +13,7 @@ langgraph>=0.2
 langchain>=0.3
 langchain-openai>=0.2
 langchain-anthropic>=0.2
-langchain-google-genai>=2.0
+langchain-google-genai>=4.2.6
 tiktoken>=0.13.0
 
 # Dev: pytest>=8
