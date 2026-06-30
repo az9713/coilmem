@@ -11,7 +11,7 @@ sentence-transformers>=3.0
 # Multi-agent team (agents/) — LangGraph + providers + token counting
 langgraph>=0.2
 langchain>=0.3
-langchain-openai>=0.2
+langchain-openai>=1.3.3
 langchain-anthropic>=0.2
 langchain-google-genai>=2.0
 tiktoken>=0.13.0
