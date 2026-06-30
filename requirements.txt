@@ -2,7 +2,7 @@
 
 # HTTP service + openai/gemini embedders
 fastapi>=0.110
-uvicorn>=0.29
+uvicorn>=0.49.0
 httpx>=0.27
 
 # Local embeddings (EMBED_PROVIDER=local) — pulls torch. Skip if using openai/gemini.
