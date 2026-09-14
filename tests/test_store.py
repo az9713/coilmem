@@ -105,7 +105,7 @@ def test_metadata_roundtrip(conn):
 
 def test_dim_guard_rejects_mismatched_embedder(conn):
     add(conn, "w1", "A", "shared", "first fact at dim 256")  # fake_embed -> 256-dim
-    other_dim = lambda text: [0.0] * 128  # noqa: E731 - different dim on purpose
+    other_dim = lambda text: [0.0] * 128
     with pytest.raises(ValueError, match="one EMBED_PROVIDER per DB"):
         store.add(conn, "w1", "A", "shared", "second fact", embed_fn=other_dim)
 

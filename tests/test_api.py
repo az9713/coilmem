@@ -22,9 +22,10 @@ def client(monkeypatch):
     monkeypatch.setenv("COILMEM_DB", ":memory:")
     monkeypatch.setenv("OPENAI_API_KEY", "unused")
     # import after env is set so module-level connection uses :memory:
-    import coilmem.app as appmod
-    import coilmem.store as store
     from fastapi.testclient import TestClient
+
+    import coilmem.app as appmod
+    from coilmem import store
 
     fresh = store.connect(":memory:")
     monkeypatch.setattr(appmod, "_conn", fresh)

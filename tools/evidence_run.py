@@ -14,15 +14,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo root, for coilmem/agents imports
 
-from coilmem.config import load_env  # noqa: E402
+from coilmem.config import load_env
 
 load_env()
 os.environ.setdefault("EMBED_PROVIDER", "openai")  # default the harness to openai embeddings (no torch)
 
-import coilmem.store as store          # noqa: E402
-from agents import team as T           # noqa: E402
-from agents.demo import TOPICS         # noqa: E402
-from agents.llm import CostMeter       # noqa: E402
+from agents import team as T
+from agents.demo import TOPICS
+from agents.llm import CostMeter
+from coilmem import store
 
 WS = "learning-ai"
 OUT = Path(__file__).resolve().parent.parent / "evidence"
