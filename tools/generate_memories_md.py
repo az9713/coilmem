@@ -26,9 +26,9 @@ def turn_of(m):
 
 ROLES = ["researcher", "critic", "writer"]
 L = ["# Full memory dump — every shared & private memory (operator view)\n",
-     f"Workspace: `learning-ai` | {len(memories)} memories "
+     (f"Workspace: `learning-ai` | {len(memories)} memories "
      f"({sum(1 for m in memories if m['scope']=='shared')} shared, "
-     f"{sum(1 for m in memories if m['scope']=='private')} private)\n",
+     f"{sum(1 for m in memories if m['scope']=='private')} private)\n"),
      "This is the raw table, unfiltered by the scope rule — what an operator with DB",
      "access sees. No agent can retrieve this whole set; each agent sees only shared +",
      "its own private. Shown here in full for audit.\n"]
