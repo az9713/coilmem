@@ -10,6 +10,9 @@ another agent's private — so the critic/writer get the researcher's *shared* f
 its private scratch. The two modes let us measure the cost of memory vs naive context-stuffing
 honestly (memory bounded ~O(k) vs naive O(turns)).
 """
+
+import itertools
+
 from langgraph.graph import END, START, StateGraph
 
 from coilmem import store
@@ -72,7 +75,7 @@ def _build_graph(conn, workspace, seats, mode, k, embed_fn, cost, transcript, la
     for role in ROLES:
         g.add_node(role, make_node(role))
     g.add_edge(START, ROLES[0])
-    for a, b in zip(ROLES, ROLES[1:]):
+    for a, b in itertools.pairwise(ROLES):
         g.add_edge(a, b)
     g.add_edge(ROLES[-1], END)
     return g.compile()
