@@ -8,11 +8,12 @@ import pytest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from test_store import fake_embed
+
 from agents import eval as cev
 from agents import team as T
 from agents.eval import stub_seats
 from coilmem import store
-from test_store import fake_embed
 
 
 def test_cross_agent_shared_transfer_and_private_isolation():
